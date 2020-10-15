@@ -1,14 +1,14 @@
 ВВОДНОЕ 
 ====
-На входе имеем файл `app.apk` для которого над узнать ключ.
+На входе имеем файл `app.apk` для которого надо узнать ключ.
 Прогоняем через JADX.
 На выходе имеем такую структуру файлов
 ```
 ├── resources
-│   ├── AndroidManifest.xml
-│   ├── META-INF
-│   ├── classes.dex
-│   └── res
+│   ├── AndroidManifest.xml
+│   ├── META-INF
+│   ├── classes.dex
+│   └── res
 └── sources
     ├── android
     └── example
@@ -24,7 +24,7 @@ MainActivity направляет нас в Checker а он в свою очер
 
 Там нас встречает такая картина. 
 ![image.png](https://github.com/Camisul/reverse/raw/master/writeup/img/0.png)
-Так как следов какогото конкретного обфускатора замечено не было, было принято решение по быстрому причесать все в ручную.
+Так как следов какого то конкретного обфускатора замечено не было, было принято решение по быстрому причесать всё в ручную.
 
 Было:
 ![image-2.png](https://github.com/Camisul/reverse/raw/master/writeup/img/1.png)
@@ -44,7 +44,7 @@ if (((Boolean) ilil.invoke(key.replaceAll("-", "").toLowerCase(Locale.UK), new O
     return Status.KEY_GOOD;
 }
 ```
-после "тщательного анализа програмного кода":
+после "тщательного анализа программного кода":
 ```java
 byte[] pkey = Arrays.copyOf(
   MessageDigest //b22a4c2d516e253453b34fc49d5eda316ea1c1da
@@ -73,7 +73,7 @@ if (((Boolean) stringEquals.invoke(
 return Status.KEY_INVALID;
 ```
 
-Если введеный ключ расшифрованый ключ совпадают результат положительный
+Если введенный и расшифрованный ключи совпадают результат положительный
 
 ### Шифрование
 Применено AES шифрование в режиме ECB 
@@ -86,7 +86,7 @@ return Status.KEY_INVALID;
     }
 ```
 Шифротекст разбит на 3 части,
-128 битный секретный ключ получается в результае применения хэш функциии SHA-1 на массив из 3 байт.
+128 битный секретный ключ получается в результате применения хэш функции SHA-1 на массив из 3 байт.
 2 из 3 байт в данном массиве получаются через функцию getbyte.
 
 
@@ -107,7 +107,7 @@ to_hash = [
 ]
 ```
 
-Хэшируем данные из это массив и отсекаем лишнее -> полчаем секретный ключ
+Хешируем данные из это массив и отсекаем лишнее -> получаем секретный ключ
 
 
 ```python
@@ -117,7 +117,7 @@ h.update(bytes(to_hash))
 sha_digest = h.digest()[:16]
 ```
 
-Собираем зашифрованые данные воедино
+Собираем зашифрованные данные воедино
 
 
 ```python
@@ -129,7 +129,7 @@ encryptred = [*pt_1, *pt_2, *pt_3]
 b = struct.pack('b'*len(encryptred), *encryptred)
 ```
 
-Расшифровываем данные полученым ключем
+Расшифровываем данные полученным ключом
 
 
 ```python
@@ -145,11 +145,11 @@ print(plaintext)
 
 
 ## Проверка результата
-Запускаем эмулятор, устанваливаем, не работает.
+Запускаем эмулятор, устанавливаем, не работает.
 
 ![image.png](https://github.com/Camisul/reverse/raw/master/writeup/img/3.png)
 
-Опять внимательно смотрим декомпиилированый код и находим это
+Опять внимательно смотрим декомпилированный код и находим это
 ```java
 Class<?> telManager2 = Class.forName("android.telephony.TelephonyManager");
 
@@ -215,7 +215,7 @@ jar signed.
 Warning:
 The signer's certificate is self-signed.
 ```
-Опять устанваливаем, смотрим.
+Опять устанавливаем, смотрим.
 Появилась возможность дать разрешение
 
 ![image-2.png](https://github.com/Camisul/reverse/raw/master/writeup/img/4.png)
@@ -224,5 +224,4 @@ The signer's certificate is self-signed.
 
 ![image-3.png](https://github.com/Camisul/reverse/raw/master/writeup/img/5.png)
 
-
-##### Win.
+Win.
