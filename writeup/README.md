@@ -23,13 +23,13 @@
 MainActivity направляет нас в Checker а он в свою очередь в C0333i.
 
 Там нас встречает такая картина. 
-![image.png](attachment:image.png)
+![image.png](https://github.com/Camisul/reverse/raw/master/writeup/img/0.png)
 Так как следов какогото конкретного обфускатора замечено не было, было принято решение по быстрому причесать все в ручную.
 
 Было:
-![image-2.png](attachment:image-2.png)
+![image-2.png](https://github.com/Camisul/reverse/raw/master/writeup/img/1.png)
 Стало:
-![image-3.png](attachment:image-3.png)
+![image-3.png](https://github.com/Camisul/reverse/raw/master/writeup/img/2.png)
 ### Проверка ключа
 Часть кода отвечающая за проверку ключа как есть:
 ```java
@@ -146,7 +146,7 @@ print(plaintext)
 
 ## Проверка результата
 Запускаем эмулятор, устанваливаем, не работает.
-![image.png](attachment:image.png)
+![image.png](https://github.com/Camisul/reverse/raw/master/writeup/img/3.png)
 
 Опять внимательно смотрим декомпиилированый код и находим это
 ```java
@@ -214,9 +214,10 @@ jar signed.
 Warning:
 The signer's certificate is self-signed.
 ```
+Опять устанваливаем, смотрим.
 Появилась возможность дать разрешение
-![image-2.png](attachment:image-2.png)
+![image-2.png](https://github.com/Camisul/reverse/raw/master/writeup/img/4.png)
 
 Пробуем ещё раз
-![image-3.png](attachment:image-3.png)
+![image-3.png](https://github.com/Camisul/reverse/raw/master/writeup/img/5.png)
 Win.
