@@ -223,4 +223,6 @@ The signer's certificate is self-signed.
 Пробуем ещё раз
 
 ![image-3.png](https://github.com/Camisul/reverse/raw/master/writeup/img/5.png)
-Win.
+
+
+##### Win.
