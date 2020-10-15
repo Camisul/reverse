@@ -146,6 +146,7 @@ print(plaintext)
 
 ## Проверка результата
 Запускаем эмулятор, устанваливаем, не работает.
+
 ![image.png](https://github.com/Camisul/reverse/raw/master/writeup/img/3.png)
 
 Опять внимательно смотрим декомпиилированый код и находим это
@@ -216,8 +217,10 @@ The signer's certificate is self-signed.
 ```
 Опять устанваливаем, смотрим.
 Появилась возможность дать разрешение
+
 ![image-2.png](https://github.com/Camisul/reverse/raw/master/writeup/img/4.png)
 
 Пробуем ещё раз
+
 ![image-3.png](https://github.com/Camisul/reverse/raw/master/writeup/img/5.png)
 Win.
