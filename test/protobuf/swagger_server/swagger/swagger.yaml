@@ -1,0 +1,59 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "PB2JSON"
+basePath: "/"
+tags:
+- name: "protobuf"
+  description: ""
+paths:
+  /parse:
+    post:
+      tags:
+      - "protobuf"
+      summary: "Converts protobuf binary format to json"
+      operationId: "parse_post"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "upfile"
+        in: "formData"
+        description: "The file to upload."
+        required: false
+        type: "file"
+      responses:
+        "200":
+          description: "Ok"
+          schema:
+            $ref: "#/definitions/Parsed"
+        "405":
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.protobuf_controller"
+definitions:
+  Parsed:
+    type: "object"
+    properties:
+      fileds:
+        type: "array"
+        items:
+          $ref: "#/definitions/Parsed_fileds"
+    example:
+      fileds:
+      - data: "1"
+        _type: "Int64"
+      - data: "1"
+        _type: "Int64"
+  Parsed_fileds:
+    type: "object"
+    properties:
+      _type:
+        type: "string"
+        example: "Int64"
+      data:
+        example: "1"
+    example:
+      data: "1"
+      _type: "Int64"
