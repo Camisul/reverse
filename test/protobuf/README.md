@@ -5,7 +5,7 @@
 | [`pb_simple_varint_test.bin`](./testfiles/pb_simple_varint_test.bin) | Базовый тест сообщения, содержит байты: `08  96  01`|
 | [`pb_simple_string_test.bin`](./testfiles/pb_simple_string_test.bin) | Тест текстовых данных, содержит байты: `12  07  74  65  73  74  69  6e  67` |
 | [`pb_embedded_message_test.bin`](./testfiles/pb_embedded_message_test.bin) | Тест вложеного сообщения, содержит байты: ` 1a  03  08  96  01` |
-| [`pb_packed_value_test.bin`](./testfiles/pb_packed_value_test.bin) | Тест 'упкованых' полей, содержит байты: `22 06 03 8E  02 9E A7 05` |
+| [`pb_packed_value_test.bin`](./testfiles/pb_packed_value_test.bin) | Тест 'упакованных' полей, содержит байты: `22 06 03 8E  02 9E A7 05` |
 
 
 ## Использование
