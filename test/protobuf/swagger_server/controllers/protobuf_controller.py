@@ -1,6 +1,6 @@
 import connexion
 import six
-
+from swagger_server.pb_parser import PbParser
 from swagger_server.models.parsed import Parsed  
 from swagger_server import util
 
@@ -14,6 +14,4 @@ def parse_post(upfile=None):
 
     :rtype: Parsed
     """
-    return Parsed([
-        Field(type="string", data="asd")
-    ])
+    return Parsed(fileds=PbParser(upfile.read()).parse())
